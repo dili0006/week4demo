@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mtm6201 - week 4</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="container" >
+      <h1>Responsive images </h1>
+      <img src="https://dummyimage.com/400x600" alt="placeholde image">
+     <section> 
+        <h2> same image different size </h2>
+        <!-- srcset is a list of possible images , depending on width of viewport -->
+         <!--sizes uses media query rules that will determine which-->
+        <img 
+        srcset="https://dummyimage.com/1020x600 1020w"
+        sizes="(max-width:320px) 320px"
+        src="https://dummyimage.com/1020x600" 
+        alt="placeholde image">
+     </section>
+     <section>
+        <h2> same size,different resolution</h2>
+     </section>
+         <img
+         srcset="https://dummyimage.com/320x320
+         https://dummyimage.com/640x640 2x,
+         https://dummyimage.com/960x960 3x"
+
+         src="https://dummyimage.com/640x640" 
+         alt="placeholde image">
+         
+
+         <section>
+            <h2>  art direction</h2>
+            <picture>
+                <!--we can use min width or max both works-->
+                <!--when using media queries , make sure u use them from largest to smallest for min-width.it the viewport is 1000pxb,it willl be true for all them, so put the largest condition first .  vise-versa for max width-->
+               
+                <source srcset="images/fall-dog-1200.jpg" media="(min-width: 900px)">
+                <source srcset="images/fall-dog-900.jpg" media="(min-width: 640px)">
+                <source srcset="images/fall-dog-640.jpg" media="(min-width: 320px)">
+                <img src="images/fall-dog-640.jpg" alt="image of a cute dog in a cute bed">
+            </picture>
+         </section>
+         <section>
+            <h2> Everything </h2>
+            <picture>
+                <source srcset="https://dummyimage.com/1200x600,
+                                https://dummyimage.com/2400x1200 2x,
+                                https://dummyimage.com/3600x1800 3x"
+                
+                media="(min-width: 960px)">
+               
+                <source srcset="https://dummyimage.com/960x500,
+                                https://dummyimage.com/1920x1000 2x,
+                                https://dummyimage.com/2880x1500 3x"
+                
+                media="(min-width: 640px)">
+
+                <source srcset="https://dummyimage.com/640x400
+                                https://dummyimage.com/1280x800 2x
+                                https://dummyimage.com/1920x1200 3x"
+                
+                
+                
+                media="(min-width: 320px)">
+
+
+                <source srcset="https://dummyimage.com/320x320
+                                https://dummyimage.com/640x640 2x
+                                https://dummyimage.com/960x960 3x"
+                
+                media="(min-width: 319px)">
+
+                <img src="https://dummyimage.com/640x640" alt="placeholder">
+            </picture>
+         </section>
+    </div>
+</body>
+</html>
